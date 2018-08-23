@@ -9,7 +9,7 @@ shopt -s dotglob
 
 echo "---> Copying repository files ..."
 cp -Rf /tmp/src/. ${JENKINS_INSTALL_DIR}
-ls -la
+ls -la ${JENKINS_INSTALL_DIR}
 
 # Install jenkins plugins using plugin installer if user has "plugins.txt" file
 # in repository
