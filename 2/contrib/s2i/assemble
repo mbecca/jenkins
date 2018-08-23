@@ -7,6 +7,7 @@ INCREMENTAL_BUILD_ARTIFACTS_DIR=/tmp/artifacts
 
 shopt -s dotglob
 
+ls -la /tmp/src/
 echo "---> Copying repository files ..."
 cp -Rf /tmp/src/. ${JENKINS_INSTALL_DIR}
 ls -la ${JENKINS_INSTALL_DIR}
