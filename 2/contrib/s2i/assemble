@@ -44,4 +44,5 @@ if [ -d ${JENKINS_INSTALL_DIR}/configuration ]; then
   echo "---> JENKINS_DIR ..."
   ls -la ${JENKINS_DIR}/configuration
   rsync -av ${JENKINS_INSTALL_DIR}/configuration/ ${JENKINS_DIR}/configuration
+  ls -la ${JENKINS_DIR}/configuration
 fi
