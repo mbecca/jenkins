@@ -365,9 +365,10 @@ if [ ! -e ${JENKINS_HOME}/configured ]; then
   # This container hasn't been configured yet
   create_jenkins_config_from_templates
 
+  ls -la $image_config_dir/*
   echo "Copying Jenkins configuration to ${JENKINS_HOME} ..."
-  ls -la
   cp -r $image_config_dir/* ${JENKINS_HOME}
+  ls -la ${JENKINS_HOME}
 
   install_plugins
 
