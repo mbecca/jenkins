@@ -8,6 +8,7 @@ INCREMENTAL_BUILD_ARTIFACTS_DIR=/tmp/artifacts
 shopt -s dotglob
 
 echo "---> Copying repository files ..."
+ls -la
 cp -Rf /tmp/src/. ${JENKINS_INSTALL_DIR}
 
 # Install jenkins plugins using plugin installer if user has "plugins.txt" file
@@ -38,5 +39,9 @@ if [ -d ${JENKINS_INSTALL_DIR}/configuration ]; then
   fi
   echo "---> Installing new Jenkins configuration ..."
   /usr/local/bin/fix-permissions ${JENKINS_INSTALL_DIR}/configuration
+  echo "---> JENKINS_INSTALL_DIR ..."
+  ls -la ${JENKINS_INSTALL_DIR}/configuration/
+  echo "---> JENKINS_DIR ..."
+  ls -la ${JENKINS_DIR}/configuration
   rsync -av ${JENKINS_INSTALL_DIR}/configuration/ ${JENKINS_DIR}/configuration
 fi
