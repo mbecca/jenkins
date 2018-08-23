@@ -10,13 +10,18 @@
 default_version=$(cat /tmp/release.version)
 JENKINS_SLAVE_IMAGE_TAG=${JENKINS_SLAVE_IMAGE_TAG:-${default_version}}
 
+echo "Listado --> /opt/openshift/"
+ls -la /opt/openshift/
+
+echo "Listado --> /opt/openshift/configuration"
+ls -la /opt/openshift/configuration
+
+
 source /usr/local/bin/jenkins-common.sh
 source /usr/local/bin/kube-slave-common.sh
 
 shopt -s dotglob
 
-echo "Listado --> /opt/openshift/configuration"
-ls -la /opt/openshift/configuration
 
 function update_admin_password() {
   sed -i "s,<passwordHash>.*</passwordHash>,<passwordHash>$new_password_hash</passwordHash>,g" "${JENKINS_HOME}/users/admin/config.xml"
