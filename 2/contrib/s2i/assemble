@@ -8,8 +8,8 @@ INCREMENTAL_BUILD_ARTIFACTS_DIR=/tmp/artifacts
 shopt -s dotglob
 
 echo "---> Copying repository files ..."
-ls -la
 cp -Rf /tmp/src/. ${JENKINS_INSTALL_DIR}
+ls -la
 
 # Install jenkins plugins using plugin installer if user has "plugins.txt" file
 # in repository
